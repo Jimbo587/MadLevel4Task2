@@ -1,4 +1,4 @@
-package com.example.madlevel4task2.Model
+package com.example.madlevel4task2.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

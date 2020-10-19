@@ -1,9 +1,9 @@
-package com.example.madlevel4task2.Repository
+package com.example.madlevel4task2.repository
 
 import android.content.Context
-import com.example.madlevel4task2.Dao.RockPaperScissorsDao
-import com.example.madlevel4task2.Database.RockPaperScissorsDatabase
-import com.example.madlevel4task2.Model.RockPaperScissors
+import com.example.madlevel4task2.dao.RockPaperScissorsDao
+import com.example.madlevel4task2.database.RockPaperScissorsDatabase
+import com.example.madlevel4task2.model.RockPaperScissors
 
 class RockPaperScissorsRepository(context: Context) {
     private val rockPaperScissorsDao: RockPaperScissorsDao
@@ -28,6 +28,6 @@ class RockPaperScissorsRepository(context: Context) {
     suspend fun insertGame(game: RockPaperScissors) =
         rockPaperScissorsDao.insertGame(game)
 
-    suspend fun clearGameHistory() =
+    suspend fun deleteHistory() =
         rockPaperScissorsDao.deleteHistory()
 }

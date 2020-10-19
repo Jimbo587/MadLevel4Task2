@@ -26,4 +26,6 @@
     <string name="win">Winner!</string>
     <string name="draw">Draw!</string>
     <string name="lose">You Lose!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -1,13 +1,13 @@
-package com.example.madlevel4task2.Database
+package com.example.madlevel4task2.database
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.madlevel4task2.Dao.RockPaperScissorsDao
-import com.example.madlevel4task2.Model.RockPaperScissors
+import com.example.madlevel4task2.dao.RockPaperScissorsDao
+import com.example.madlevel4task2.model.RockPaperScissors
 
-@Database(entities = [RockPaperScissors::class], version = 1, exportSchema = false)
+@Database(entities = [RockPaperScissors::class], version = 2, exportSchema = false)
 abstract class RockPaperScissorsDatabase : RoomDatabase() {
 
     abstract fun rockPaperScissorsDao(): RockPaperScissorsDao
@@ -23,7 +23,11 @@ abstract class RockPaperScissorsDatabase : RoomDatabase() {
                 synchronized(RockPaperScissorsDatabase::class.java) {
                     if (rockPaperScissorsRoomDatabaseInstance == null) {
                         rockPaperScissorsRoomDatabaseInstance =
-                            Room.databaseBuilder(context.applicationContext,RockPaperScissorsDatabase::class.java, DATABASE_NAME).build()
+                            Room.databaseBuilder(
+                                context.applicationContext,
+                                RockPaperScissorsDatabase::class.java, DATABASE_NAME
+                            )
+                                .fallbackToDestructiveMigration().build()
                     }
                 }
             }

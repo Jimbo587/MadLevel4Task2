@@ -1,9 +1,9 @@
-package com.example.madlevel4task2.Dao
+package com.example.madlevel4task2.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
-import com.example.madlevel4task2.Model.RockPaperScissors
+import com.example.madlevel4task2.model.RockPaperScissors
 
 @Dao
 interface RockPaperScissorsDao {
